@@ -1,0 +1,12 @@
+--- Change The Size In Vector3.new 
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local newSize = Vector3.new(2, 2, 2)
+
+
+for _, part in pairs(character:GetDescendants()) do
+    if part:IsA("BasePart") then
+        part.Size = part.Size * newSize
+    end
+end
